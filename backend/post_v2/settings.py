@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 PROJECTS_APPS = ["post_v2.apps.post"]
 
+DOWNLOADED_PACKAGES = ["rest_framework"]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -40,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_APPS = INSTALLED_APPS + PROJECTS_APPS
+INSTALLED_APPS = INSTALLED_APPS + PROJECTS_APPS + DOWNLOADED_PACKAGES
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
