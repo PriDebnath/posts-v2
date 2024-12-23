@@ -43,6 +43,7 @@
             ],
             "styles": [
               "src/theme.less",
+              "src/output.css",
               "src/styles.css"
             ],
             "scripts": [],
