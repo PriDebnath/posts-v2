@@ -1,2 +1,11 @@
-<p>post-list works!</p>
-<h1>home page</h1>
+<div class="post-card-container">
+  @for ( post of posts; track post.id){
+  <div class="post-card">
+    <div class="circle" [ngStyle]="{ background: null | getColor }"></div>
+    <div class="post-content">
+      <h3 class="header body-text">{{ post.title }}</h3>
+      <p class="description body-sub-text">{{ post.description }}</p>
+    </div>
+  </div>
+  }
+</div>
