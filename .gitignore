@@ -2,6 +2,7 @@ db.sqlite3
 *.sqlite3
 Pipfile
 Pipfile.lock 
+__pycache__
 
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
