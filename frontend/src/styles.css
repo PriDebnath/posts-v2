@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --body-bg: black;
+  --body-text: white;
+  --body-sub-text: grey;
+}
+
+body {
+  background: var(--body-bg);
+}
+
+.body-text {
+  color: var(--body-text);
+}
+
+.body-sub-text {
+  color: var(--body-sub-text);
+}

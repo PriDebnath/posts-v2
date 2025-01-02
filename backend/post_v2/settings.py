@@ -25,13 +25,14 @@ SECRET_KEY = "django-insecure-1t!lqs*9@-49wckwp$1d3&cc+$*b8z6so*i^sl5$n4*+i1b_-5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 PROJECTS_APPS = ["post_v2.apps.post"]
 
-DOWNLOADED_PACKAGES = ["rest_framework"]
+DOWNLOADED_PACKAGES = ["rest_framework", "corsheaders"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "post_v2.urls"

@@ -1,0 +1,54 @@
+/*  */
+
+* {
+  transition: 0.2s;
+}
+
+.post-card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-card {
+  background: #261339;
+  margin: 0.2rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 100px;
+}
+
+.post-card:hover .circle {
+  transform: scale(3);
+}
+
+.circle {
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  /* background: lime; */ /* change it with js */
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  transform: translate(70%, -70%);
+}
+
+.post-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.4rem 0.8rem;
+}
+
+.post-card .header {
+  font-size: 1.1rem;
+}
+
+.post-card .description {
+  font-size: 1rem;
+}
