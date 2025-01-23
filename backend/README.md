@@ -41,13 +41,23 @@ or if you want to specific about python version
 ```
   pip install -r requirements.txt
 ```
-
+-
 #### Make sure django installed successfully by checking its version
 
 ```
   python -m django --version
 ```
+-
+#### Migration
 
+```
+  python manage.py makemigrations
+```
+
+```
+  python manage.py migrate
+```
+-
 #### Start server
 
 ```
