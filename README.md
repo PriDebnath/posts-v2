@@ -1,7 +1,8 @@
 ## Set Up
 
-[Frontend Set Up](https://github.com/)
+[Frontend Set Up](https://github.com/PriDebnath/posts-v2/tree/main/frontend)
 
+#### [Backend Set Up](https://github.com/PriDebnath/posts-v2/tree/main/backend)
 
 ## Tutorials
 #### Playlist
