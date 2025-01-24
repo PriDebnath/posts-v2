@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  transition: all 0.2s;
+}
+
 :root {
   --body-bg: black;
   --body-text: white;
@@ -15,4 +19,9 @@ body {
 
 .body-sub-text {
   color: var(--body-sub-text);
+}
+
+.scale-1-2:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
