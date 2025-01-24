@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   width: 300px;
-  height: 100px;
+  height: 160px;
 }
 
 .post-card:hover .circle {
@@ -51,4 +51,17 @@
 
 .post-card .description {
   font-size: 1rem;
+}
+
+.add-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  background: lime;
+  right: 1rem;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
 }

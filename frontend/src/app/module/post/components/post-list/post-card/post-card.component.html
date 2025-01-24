@@ -1,0 +1,39 @@
+<ng-container *ngIf="post.editMode; else notEditMode">
+  <h3 class="header-container body-text">
+    <input style="color: black" [(ngModel)]="postTitle" />
+    <nz-icon
+      nzType="close"
+      nzTheme="outline"
+      class="scale-1-2"
+      style="color: white; margin: 0 0.3rem"
+      (click)="closeEditPost()"
+
+    />
+  </h3>
+  <p class="description body-sub-text">
+    <input [(ngModel)]="postDescription" />
+  </p>
+  <button (click)="savePost()">Save</button>
+</ng-container>
+<ng-template #notEditMode>
+  <div class="header-container">
+    <h3 class="header body-text">{{ post.title }}</h3>
+    <div class="action-button">
+      <nz-icon
+        nzType="edit"
+        nzTheme="outline"
+        style="color: white"
+        class="scale-1-2"
+        (click)="editPost()"
+      />
+      <nz-icon
+        nzType="delete"
+        nzTheme="outline"
+        class="scale-1-2"
+        style="color: white; margin: 0 0.3rem"
+        (click)="confirmDeletePost()"
+      />
+    </div>
+  </div>
+  <p class="description body-sub-text">{{ post.description }}</p>
+</ng-template>
