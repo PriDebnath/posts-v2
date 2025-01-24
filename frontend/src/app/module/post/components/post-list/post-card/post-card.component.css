@@ -1,0 +1,12 @@
+input,
+button {
+  border-radius: 0.5rem;
+  border: 2px solid #261339;
+  background-color: white;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
