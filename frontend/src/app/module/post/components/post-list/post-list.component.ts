@@ -27,4 +27,17 @@ export class PostListComponent implements OnInit {
       },
     });
   }
+
+  handleRefeshList() {
+    this.getAllPosts();
+  }
+
+  handleAddPost() {
+    let postsLocal = this.posts;
+    let newPost: Post = {
+      editMode: true,
+    };
+    postsLocal.unshift(newPost);
+    this.posts = postsLocal;
+  }
 }

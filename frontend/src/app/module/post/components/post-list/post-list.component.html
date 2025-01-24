@@ -3,9 +3,15 @@
   <div class="post-card">
     <div class="circle" [ngStyle]="{ background: null | getColor }"></div>
     <div class="post-content">
-      <h3 class="header body-text">{{ post.title }}</h3>
-      <p class="description body-sub-text">{{ post.description }}</p>
+      <app-post-card
+        [post]="post"
+        (refeshList)="handleRefeshList()"
+      ></app-post-card>
     </div>
   </div>
   }
+</div>
+
+<div class="add-button-container" (click)="handleAddPost()">
+  <nz-icon nzType="plus" nzTheme="outline" style="color: white; scale: 2" />
 </div>
