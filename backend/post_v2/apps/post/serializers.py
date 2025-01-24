@@ -24,7 +24,7 @@ class PostSerializer(ModelSerializer):
 
     def create(self, validated_data):
         user = self.context["request"].user
-        if user:
+        if user.is_authenticated:
             validated_data["user"] = user
 
         tag_list = validated_data.pop(
