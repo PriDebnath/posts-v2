@@ -21,9 +21,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "baseHref": "./",
           "builder": "@angular-devkit/build-angular:application",
-          "options": {
+          "options": {          
+            "baseHref": "./",
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -50,7 +50,6 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
