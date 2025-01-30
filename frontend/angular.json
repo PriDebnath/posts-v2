@@ -21,6 +21,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "baseHref": "./",
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/frontend",
