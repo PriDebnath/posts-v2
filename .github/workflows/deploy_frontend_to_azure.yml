@@ -1,0 +1,38 @@
+name : deploy_frontend_to_azure
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch: # let you run the workflow from action tab
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Step 2 - checkout # copy entire codebase
+        uses: actions/checkout@v4
+
+      - name: Step 3 - install packages
+        run: |
+          cd frontend
+          npm i --legacy-peer-deps
+  
+      - name: Step 4 - build frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Step 5 - upload to azure
+        run: |
+          az storage blob upload-batch -s frontend/dist/frontend/browser -d '$web' --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }}
+      
