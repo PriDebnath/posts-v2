@@ -22,7 +22,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "options": {
+          "options": {          
             "baseHref": "./",
             "outputPath": "dist/frontend",
             "index": "src/index.html",
