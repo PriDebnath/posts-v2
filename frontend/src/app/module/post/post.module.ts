@@ -7,11 +7,12 @@ import { GetColorPipe } from './pipes/get-color/get-color.pipe';
 import { PostCardComponent } from './components/post-list/post-card/post-card.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FormsModule } from '@angular/forms';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [PostListComponent, GetColorPipe, PostCardComponent],
   exports: [GetColorPipe],
-  imports: [CommonModule, PostRoutingModule, NzIconModule, FormsModule],
+  imports: [CommonModule, PostRoutingModule, NzIconModule, FormsModule, NzButtonModule],
 })
-export class PostModule {}
+export class PostModule { }

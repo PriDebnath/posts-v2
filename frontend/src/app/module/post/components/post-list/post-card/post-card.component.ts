@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from '../../../models/post.model';
 import { PostServiceService } from '../../../services/post-service.service';
+import { MessageServiceService } from '../../../services/message/message-service.service';
 
 @Component({
   selector: 'app-post-card',
@@ -15,7 +16,10 @@ export class PostCardComponent {
   @Input() post: Post = {};
   @Output() refeshList = new EventEmitter();
 
-  constructor(private postServiceService: PostServiceService) {}
+  constructor(
+    private postServiceService: PostServiceService,
+    private messageServiceService: MessageServiceService
+  ) { }
 
   savePost() {
     let newPost: Post = {
@@ -54,6 +58,7 @@ export class PostCardComponent {
   createPost(data: Post) {
     this.postServiceService.createPost(data).subscribe({
       next: (data) => {
+        this.messageServiceService.createMessage({ type: 'success', message: 'Created post successfully' })
         this.post = data;
       },
       error: (err) => {
@@ -63,9 +68,12 @@ export class PostCardComponent {
   }
 
   updatePost(data: Post) {
+    let messageId = this.messageServiceService.createloadingMessage('Updating post ...')
     this.postServiceService.updatePost(data).subscribe({
       next: (data) => {
         this.post = data;
+        this.messageServiceService.removeloadingMessage(messageId)
+        this.messageServiceService.createMessage({ type: 'success', message: 'Updated post successfully' })
       },
       error: (err) => {
         console.log({ err });
@@ -78,6 +86,8 @@ export class PostCardComponent {
       next: (data) => {
         // this.post = data;
         this.refeshList.emit();
+        this.messageServiceService.createMessage({ type: 'success', message: 'Deleted post successfully' })
+
       },
       error: (err) => {
         console.log({ err });

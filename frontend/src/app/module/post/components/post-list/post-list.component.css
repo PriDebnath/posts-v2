@@ -27,7 +27,8 @@
   position: absolute;
   height: 10rem;
   width: 10rem;
-  /* background: lime; */ /* change it with js */
+  /* background: lime; */
+  /* change it with js */
   border-radius: 50%;
   top: 0;
   right: 0;
@@ -64,4 +65,5 @@
   width: 3rem;
   aspect-ratio: 1;
   border-radius: 50%;
+  cursor: pointer;
 }

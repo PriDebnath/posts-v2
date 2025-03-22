@@ -11,7 +11,7 @@ import { Post } from '../../models/post.model';
 })
 export class PostListComponent implements OnInit {
   posts: Post[] = [];
-  constructor(private postServiceService: PostServiceService) {}
+  constructor(private postServiceService: PostServiceService) { }
 
   ngOnInit(): void {
     this.getAllPosts();
@@ -20,7 +20,8 @@ export class PostListComponent implements OnInit {
   getAllPosts() {
     this.postServiceService.getAllPosts({}).subscribe({
       next: (data) => {
-        this.posts = data as [];
+        let arr = data as [];
+        this.posts = arr.reverse()
       },
       error: (err) => {
         console.log({ err });
